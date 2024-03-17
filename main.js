@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require("express")
 const OpenAI = require("openai")
 const app=express()
 app.use(express.json())
 
 const openai=new OpenAI({
-    apiKey:"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"
+    apiKey:process.env.OPENAI_API_KEY
 })
 
 app.get('/getResponse',async(req,res)=>{
